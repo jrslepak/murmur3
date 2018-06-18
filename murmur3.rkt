@@ -28,6 +28,6 @@
                           (malloc _byte 4) (malloc _byte 16)))
   (define hash-fun (if small-fixnum?
                        murmur-hash3-x86-32 murmur-hash3-x64-128))
-  (hash-fun data* seed (bytes-length data*) hash-result)
+  (hash-fun data* (bytes-length data*) seed hash-result)
   (ptr-ref hash-result _fixnum))
 
